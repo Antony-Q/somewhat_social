@@ -9,6 +9,12 @@ const ReactionSchema = new Schema(
             minLength: 1,
             maxLength: 280
         },
+        reactionBody: {
+            type: String,
+            required: true,
+            minLength: 1,
+            maxLength: 280
+        },
         createdAt: {
             type: Date,
             default: Date.now,
@@ -42,4 +48,4 @@ reactionSchema.virtual('reactionCount').get(function () {
 
 const reaction = model('reaction', reactionSchema);
 
-module.exports = reaction;
+module.exports = ReactionSchema;
