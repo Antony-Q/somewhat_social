@@ -1,17 +1,13 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
-const PizzaSchema = new Schema(
+const ThoughtSchema = new Schema(
     {
-        pizzaName: {
+        thoughtText: {
             type: String,
             required: true,
-            trim: true
-        },
-        createdBy: {
-            type: String,
-            required: true,
-            trim: true
+            minLength: 1,
+            maxLength: 280
         },
         createdAt: {
             type: Date,
